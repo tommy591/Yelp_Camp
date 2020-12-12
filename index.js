@@ -24,13 +24,21 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => res.render("home"));
 app.get("/campgrounds", async (req, res) => {
-   const camp = new Campground({
-      title: "mt_joke",
-      price: 10,
-      description: " beatiful mountains",
-      location: "waianae",
-   });
-   await camp.save();
-   res.send(camp);
+   const campgrounds = await Campground.find({});
+   res.render("campgrounds/index", { campgrounds });
 });
+app.get("/campgrounds/new", (req, res) => {
+   res.render("campgrounds/new");
+});
+app.get("/campgrounds/:id", async (req, res) => {
+   const { id } = req.params;
+   const campground = await Campground.findById(id);
+   res.render("campgrounds/show", { campground });
+});
+app.post("/campgrounds", async (req, res) => {
+   const campground = new Campground(req.body.campground);
+   await campground.save();
+   res.redirect(`/campgrounds/${campground._id}`)
+});
+
 app.listen(port, () => console.log(`Example app listening on port 27017`));
