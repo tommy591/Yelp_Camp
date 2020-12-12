@@ -39,7 +39,6 @@ module.exports.places = [
    "Dispersed Camp",
    "Backcountry",
    "River",
-   "Pray 4 Sex",
    "Yokohamas",
    "Mapuana",
    "Creek",
