@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const ejsMate = require("ejs-mate");
 const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const Campground = require("./models/campground");
@@ -18,6 +19,8 @@ db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
    console.log("Dtabase connected");
 });
+
+app.engine('ejs', ejsMate)
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -57,9 +60,9 @@ app.put("/campgrounds/:id", async (req, res) => {
    });
    res.redirect(`/campgrounds/${campground._id}`);
 });
-app.delete("/campgrounds/:id", async(req, res) =>{
+app.delete("/campgrounds/:id", async (req, res) => {
    const { id } = req.params;
-    await Campground.findByIdAndDelete(id)
-    res.redirect("/campgrounds")
-})
+   await Campground.findByIdAndDelete(id);
+   res.redirect("/campgrounds");
+});
 app.listen(port, () => console.log(`Example app listening on port 27017`));
