@@ -2,7 +2,12 @@
 <div class="row">
    <h1 class="text-center">New Campground</h1>
    <div class="col-6 offset-3">
-      <form action="/campgrounds" method="post">
+      <form
+         action="/campgrounds"
+         method="post"
+         class="needs-validation"
+         novalidate
+      >
          <div class="mb-2">
             <label for="title" class="form-lable">Title</label>
             <input
@@ -11,7 +16,9 @@
                name="campground[title]"
                id="title"
                placeholder="Title"
+               required
             />
+            <div class="valid-feedback">Looks good!</div>
          </div>
          <div class="mb-2">
             <label for="location" class="form-lable">Location</label>
@@ -21,7 +28,9 @@
                name="campground[location]"
                id="location"
                placeholder="location"
+               required
             />
+            <div class="valid-feedback">Looks good!</div>
          </div>
          <div class="mb-2">
             <label for="image" class="form-lable">Image Url</label>
@@ -31,7 +40,9 @@
                name="campground[image]"
                id="image"
                placeholder="image"
+               required
             />
+            <div class="valid-feedback">Looks good!</div>
          </div>
          <div class="mb-2">
             <label for="price" class="form-lable">Campground Price</label>
@@ -43,8 +54,10 @@
                   name="campground[price]"
                   id="price"
                   aria-label="price-lable"
+                  required
                />
                <span class="input-group-text" id="price-lable">.00</span>
+               <div class="valid-feedback">Looks good!</div>
             </div>
             <label for="description" class="form-lable">Description</label>
             <input
@@ -53,7 +66,9 @@
                name="campground[description]"
                id="description"
                placeholder="description"
+               required
             />
+            <div class="valid-feedback">Looks good!</div>
          </div>
          <button class="btn btn-success btn-sm">Add campsite</button>
       </form>
