@@ -2,7 +2,12 @@
 <div class="row">
    <h1 class="text-center">Edit Campground</h1>
    <div class="col-6 offset-3">
-      <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="post">
+      <form
+         action="/campgrounds/<%=campground._id%>?_method=PUT"
+         method="post"
+         class="needs-validation"
+         novalidate
+      >
          <div class="mb-2">
             <label for="title" class="form-lable">Title</label>
             <input
@@ -12,7 +17,9 @@
                id="title"
                value="<%=campground.title%>"
                placeholder="Title"
+               required
             />
+            <div class="valid-feedback">Looks good!</div>
          </div>
          <div class="mb-2">
             <label for="location" class="form-lable">Location</label>
@@ -23,7 +30,9 @@
                id="location"
                value="<%=campground.location%>"
                placeholder="location"
+               required
             />
+            <div class="valid-feedback">Looks good!</div>
          </div>
          <div class="mb-2">
             <label for="image" class="form-lable">Image Url</label>
@@ -34,7 +43,9 @@
                id="image"
                value="<%=campground.image%>"
                placeholder="image"
+               required
             />
+            <div class="valid-feedback">Looks good!</div>
          </div>
          <div class="mb-2">
             <label for="price" class="form-lable">Campground Price</label>
@@ -47,6 +58,7 @@
                   id="price"
                   value="<%=campground.price%>"
                   aria-label="price-lable"
+                  required
                />
                <span
                   class="input-group-text"
@@ -54,6 +66,7 @@
                   value="<%=campground.price%>"
                   >.00</span
                >
+               <div class="valid-feedback">Looks good!</div>
             </div>
             <label for="description" class="form-lable">Description</label>
             <input
@@ -63,7 +76,9 @@
                id="description"
                value="<%=campground.description%>"
                placeholder="description"
+               required
             />
+            <div class="valid-feedback">Looks good!</div>
          </div>
          <button class="btn btn-success btn-sm">Update campsite</button>
       </form>
