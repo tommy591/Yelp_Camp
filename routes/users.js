@@ -41,7 +41,7 @@ router.post(
 );
 router.get("/logout", (req, res) => {
    req.logout();
-   req.flash("success", " GoodBye YO 😎!!!");
+   req.flash("success", " GOODBYE YO!!! 😎");
    res.redirect("/campgrounds");
 });
 
