@@ -36,7 +36,9 @@ router.post(
    }),
    async (req, res) => {
       req.flash("success", "YO YO YO Welcome back homes!!!");
-      res.redirect("/campgrounds");
+      const redirectUrl = req.session.returnTo || '/campgrounds';
+      delete req.session.returnTo
+      res.redirect(redirectUrl)
    }
 );
 router.get("/logout", (req, res) => {
