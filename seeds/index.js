@@ -27,7 +27,28 @@ const seedDB = async () => {
          author: "5fe5eadc573fb523e819ea5f",
          location: `${cities[random1000].city},${cities[random1000].state}`,
          title: `${sample(descriptors)} ${sample(places)}`,
-         image: "https://source.unsplash.com/collection/4803919",
+         images: [
+            {
+               url:
+                  "https://res.cloudinary.com/dxatqwuju/image/upload/v1609691825/yelp_camp/fcxcwovatrryddmzff0u.jpg",
+               filename: "yelp_camp/fcxcwovatrryddmzff0u",
+            },
+            {
+               url:
+                  "https://res.cloudinary.com/dxatqwuju/image/upload/v1609691825/yelp_camp/ekhaglnjsnx48q0iw5ml.jpg",
+               filename: "yelp_camp/ekhaglnjsnx48q0iw5ml",
+            },
+            {
+               url:
+                  "https://res.cloudinary.com/dxatqwuju/image/upload/v1609691825/yelp_camp/zqxggnyhjbtfpu5krjcz.jpg",
+               filename: "yelp_camp/zqxggnyhjbtfpu5krjcz",
+            },
+            {
+               url:
+                  "https://res.cloudinary.com/dxatqwuju/image/upload/v1609691825/yelp_camp/qldxbqpfkuemo8nchbxw.jpg",
+               filename: "yelp_camp/qldxbqpfkuemo8nchbxw",
+            },
+         ],
          description:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, facere iusto! Ab est distinctio a.",
          price,
