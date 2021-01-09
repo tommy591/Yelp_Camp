@@ -1,5 +1,5 @@
 const Campground = require("../models/campground");
-const {cloudinary} = require("../cloudinary");
+const { cloudinary } = require("../cloudinary");
 
 module.exports.index = async (req, res) => {
   const campgrounds = await Campground.find({});
@@ -47,7 +47,7 @@ module.exports.renderEditForm = async (req, res) => {
 };
 module.exports.updateCampground = async (req, res) => {
   const { id } = req.params;
-  //console.log(req.body);
+  console.log(req.body);
   const campground = await Campground.findByIdAndUpdate(id, {
     ...req.body.campground,
   });
@@ -59,11 +59,12 @@ module.exports.updateCampground = async (req, res) => {
   await campground.save();
   if (req.body.deleteImages) {
     for (let filename of req.body.deleteImages) {
-      await cloudinary.uploader.destroy(filename)
+      await cloudinary.uploader.destroy(filename);
     }
     await campground.updateOne({
-      $pull: { images: { filename: { $in: req.body.deleteImages } } }});
-      //console.log(campground);
+      $pull: { images: { filename: { $in: req.body.deleteImages } } },
+    });
+    console.log(campground);
   }
   req.flash("success", "Successfully updated a campground");
   res.redirect(`/campgrounds/${campground._id}`);
