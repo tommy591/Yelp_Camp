@@ -7,6 +7,7 @@
          method="post"
          class="needs-validation"
          novalidate
+         entype="multipart/form-data"
       >
          <div class="mb-2">
             <label for="title" class="form-lable">Title</label>
@@ -16,7 +17,6 @@
                name="campground[title]"
                id="title"
                value="<%=campground.title%>"
-               placeholder="Title"
                required
             />
             <div class="valid-feedback">Looks good!</div>
