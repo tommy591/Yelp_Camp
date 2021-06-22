@@ -19,9 +19,9 @@ const campgroundRoutes = require("./routes/campgrounds");
 const reviewRoutes = require("./routes/reviews");
 
 const app = express();
-const port = 27017;
+const port = 3000;
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp", {
+mongoose.connect("mongodb://localhost:27017/Yelpkamp", {
    useNewUrlParser: true,
    useUnifiedTopology: true,
    useCreateIndex: true,

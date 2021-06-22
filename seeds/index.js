@@ -20,44 +20,18 @@ const sample = (array) => array[Math.floor(Math.random() * array.length)];
 
 const seedDB = async () => {
   await Campground.deleteMany({});
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 5; i++) {
     const random1000 = Math.floor(Math.random() * 1000);
-    const price = Math.floor(Math.random() * 30) + 5;
+    const price = Math.floor(Math.random() * 10) + 2;
     const camp = new Campground({
-      author: "5ff27f98c7cef50488d165ea",
+      author: "60c3e84eaa16b409d0a7f480",
       location: `${cities[random1000].city},${cities[random1000].state}`,
       title: `${sample(descriptors)} ${sample(places)}`,
       images: [
         {
-          url:
-            "https://res.cloudinary.com/dxatqwuju/image/upload/v1610156665/yelp_camp/vp59jdawupvml6h224jf.jpg",
-          filename: "yelp_camp/vp59jdawupvml6h224jf",
-        },
-        {
-          url:
-            "https://res.cloudinary.com/dxatqwuju/image/upload/v1610156663/yelp_camp/njbscyc8rgaaea40fw1b.jpg",
-          filename: "yelp_camp/njbscyc8rgaaea40fw1b",
-        },
-        {
-          url:
-            "https://res.cloudinary.com/dxatqwuju/image/upload/v1610155687/yelp_camp/zqm6yyccoungyqjwpv3h.jpg",
-          filename: "yelp_camp/zqm6yyccoungyqjwpv3h",
-        },
-        {
-          url:
-            "https://res.cloudinary.com/dxatqwuju/image/upload/v1610155687/yelp_camp/vhzsvif2umzbo24deq5u.jpg",
-          filename: "yelp_camp/vhzsvif2umzbo24deq5u",
-        },
-        {
-          url:
-            "https://res.cloudinary.com/dxatqwuju/image/upload/v1610155686/yelp_camp/sdc2fxrj9xoji1v5slnt.jpg",
-          filename: "yelp_camp/sdc2fxrj9xoji1v5slnt",
-        },
-        {
-          url:
-            "https://res.cloudinary.com/dxatqwuju/image/upload/v1610155686/yelp_camp/iiajsuksaubtoniyiwcy.jpg",
-          filename: "yelp_camp/iiajsuksaubtoniyiwcy",
-        },
+					url: 'https://res.cloudinary.com/tommy91/image/upload/v1623452622/YelpKamp/fozklgzij1suk1y5rghv.jpg',
+					filename: 'YelpKamp/fozklgzij1suk1y5rghv',
+				}
       ],
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, facere iusto! Ab est distinctio a.",
